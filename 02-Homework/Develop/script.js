@@ -95,6 +95,12 @@ function writePassword() {
 
   function generatePassword(){
     var firstHalf = upperCase.concat(lowerCase).concat(numberInput).concat(specialChar);
+    for (i = 0; i < (lengthPassword-4); i++){
+      var newNum = Math.random();
+      newNum = newNum * 10;
+      newNum = Math.floor(newNum);
+      firstHalf = firstHalf + newNum;
+    }
     return firstHalf;
   }
   var password = generatePassword()
